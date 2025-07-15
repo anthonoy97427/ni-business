@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+/* Configuration Tailwind v4 pour N.I Business */
+@theme {
+  --font-family-inter: "Inter", sans-serif;
+  --font-family-poppins: "Poppins", sans-serif;
+  
+  /* Couleurs principales selon la charte N.I Business */
+  --color-tech-blue-500: #3b82f6;
+  --color-tech-blue-600: #1e40af;
+  --color-tech-blue-700: #1d4ed8;
+  
+  --color-anthracite-500: #374151;
+  --color-anthracite-600: #1f2937;
+  --color-anthracite-700: #111827;
+  
+  --color-emerald-action-500: #10b981;
+  --color-emerald-action-600: #059669;
+  --color-emerald-action-700: #047857;
+  
+  --color-energy-orange-500: #f59e0b;
+  --color-energy-orange-600: #d97706;
+  --color-energy-orange-700: #b45309;
+  
+  --color-alert-red-500: #ef4444;
+  --color-alert-red-600: #dc2626;
+  --color-alert-red-700: #b91c1c;
+  
+  /* Animations personnalisées */
+  --animate-fade-in: fade-in 0.8s ease-out;
+  --animate-slide-up: slide-up 0.6s ease-out;
+  --animate-slide-right: slide-right 0.7s ease-out;
+  --animate-slide-left: slide-left 0.7s ease-out;
+  --animate-scale-up: scale-up 0.5s ease-out;
+  --animate-bounce-in: bounce-in 0.8s ease-out;
+  --animate-rotate-in: rotate-in 0.6s ease-out;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slide-up {
+  0% { 
+    transform: translateY(40px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes slide-right {
+  0% { 
+    transform: translateX(-40px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes slide-left {
+  0% { 
+    transform: translateX(40px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes scale-up {
+  0% { 
+    transform: scale(0.8); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes bounce-in {
+  0% { 
+    transform: scale(0.3) translateY(-20px); 
+    opacity: 0; 
+  }
+  50% { 
+    transform: scale(1.05) translateY(0); 
+  }
+  70% { 
+    transform: scale(0.95); 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes rotate-in {
+  0% { 
+    transform: rotate(-10deg) scale(0.8); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: rotate(0deg) scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); 
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); 
+  }
+}
+
+/* Styles de base */
+html {
+  font-family: var(--font-family-inter);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-anthracite-700);
+}
+
+/* Classes utilitaires personnalisées */
+.text-gradient-tech {
+  background: linear-gradient(135deg, var(--color-tech-blue-600), var(--color-emerald-action-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  background-color: var(--color-tech-blue-600);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-tech-blue-700);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--color-emerald-action-500);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-emerald-action-600);
+  transform: translateY(-2px);
+}
+
+/* Classes d'animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slide-right 0.7s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slide-left 0.7s ease-out forwards;
+}
+
+.animate-scale-up {
+  animation: scale-up 0.5s ease-out forwards;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.8s ease-out forwards;
+}
+
+.animate-rotate-in {
+  animation: rotate-in 0.6s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Classes de délai pour des animations échelonnées */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* Effets hover animés */
+.hover-lift {
+  transition: all 0.3s ease-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hover-scale {
+  transition: all 0.3s ease-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  transition: all 0.3s ease-out;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+} 
